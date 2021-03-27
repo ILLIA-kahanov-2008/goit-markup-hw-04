@@ -8,6 +8,7 @@
   --dark-bg-color: #2f303a;
   --logo-font: 'Raleway', sans-serif;
   --filter-color: #f5f4fa;
+  --hero-bg-color: #C4C4C4;
   --one-item: 1;
 }
 html {
@@ -68,7 +69,7 @@ img {
   padding-right: 15px;
   margin-right: auto;
   margin-left: auto;
-  background-color: lightgray;
+  /* background-color: bisque; */
 }
 .section {
   padding-top: 94px;
@@ -129,7 +130,6 @@ img {
   fill: currentColor;
   margin-right: 10px;
 }
-
 /* --logo-stilization-- */
 .logo-link {
   display: inline-block;
@@ -161,9 +161,6 @@ img {
   padding-top: 60px;
   padding-bottom: 60px;
 }
-.footer .container {
-  display: flex;
-}
 .footer .logo-link {
   margin-bottom: 20px;
 }
@@ -174,12 +171,30 @@ img {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.6);
 }
+.footer .footer-social-title {
+  margin-top: 12px;
+  margin-bottom: 20px;
+  color: var(--white-color);
+}
+.footer .social-icons-link {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.footer .social-icons-link .icon {
+  fill: var(--white-color);
+}
 /* --index.html-- */
 .hero {
-  background-color: var(--dark-bg-color);
+  background-color: var(--hero-bg-color);
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-image.jpg);
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: cover;
   text-align: center;
   padding-top: 200px;
   padding-bottom: 200px;
+  box-shadow: 
+    0px 4px 4px rgba(0, 0, 0, 0.25), 
+    0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .hero-title {
   max-width: 700px;
@@ -221,12 +236,14 @@ img {
 .features-list,
 .work-about-list,
 .team-member-list,
-.clients-list {
+.clients-list,
+.footer-list {
   display: flex;
   margin-left: -30px;
 }
 .features-item,
-.team-member-item {
+.team-member-item,
+.footer-item {
   flex-basis: calc(
     (100% - (30px * var(--one-item) * 4)) / (var(--one-item) * 4)
   );
@@ -253,11 +270,12 @@ img {
 .tecnology .features-item-title::before {
   background-image: url(../images/features/astronaut.png);
 }
-.features-item-title {
+.features-item-title,
+.footer-social-title {
   margin-bottom: 10px;
   font-weight: 700;
   font-size: 14px;
-  line-height: 1.19;
+  line-height: 1.143;
   text-transform: uppercase;
   color: var(--title-color);
 }
@@ -303,12 +321,12 @@ img {
 }
 .social-icons-link {
   display: flex;
-  /* background-color: #555500; */
   width: 44px;
   height: 44px;
   border-radius: 50%;
   justify-content: center;
   align-items: center;
+  /* background-color: rgba(255, 255, 255, 0.1); */
 }
 .social-icons-link:hover,
 .social-icons-link:focus {
@@ -327,9 +345,8 @@ img {
   fill: var(--icon-color);
 }
 .clients-list-item {
-  width: calc( (100% - (30px * var(--one-item) * 6)) / (var(--one-item) * 6) );
+  width: calc((100% - (30px * var(--one-item) * 6)) / (var(--one-item) * 6));
   margin-left: 30px;
-
 }
 .clients-link {
   display: flex;
@@ -350,7 +367,7 @@ img {
 .clients-link:focus .icon {
   fill: var(--accent-color);
 }
-.client-1 .icon {
+/* .client-1 .icon {
   width: 45px;
   height: 50px;
 }
@@ -367,8 +384,13 @@ img {
   height: 42px;
 }
 .client-5 .icon {
-
+  width: 59px;
+  height: 47px;
 }
+.client-6 .icon {
+  width: 89px;
+  height: 46px;
+} */
 /* Portfolio.html */
 .portfolio {
   padding-bottom: 94px;
@@ -401,8 +423,6 @@ img {
   background-color: var(--accent-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
-  border: none;
-  border-radius: 4px;
 }
 .portfolio-list {
   display: flex;
@@ -411,13 +431,19 @@ img {
   margin-top: -30px;
 }
 .portfolio-item {
-  background-color: var(--white-color);
   border: 1px solid #eeeeee;
   flex-basis: calc(
     (100% - (30px * var(--one-item) * 3)) / (var(--one-item) * 3)
   );
   margin-left: 30px;
-  margin-top: 30px;
+  margin-top: 30px;  
+}
+.portfolio-item-link:hover,
+.portfolio-item-link:focus {
+  box-shadow: 
+    0px 1px 1px rgba(0, 0, 0, 0.12), 
+    0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 .portfolio-item-text {
   padding: 20px 24px;
@@ -434,9 +460,10 @@ img {
   font-size: 16px;
   line-height: 1.875;
 }
-.portfolio-item-link,
-.portfolio-item-link:hover,
-.portfolio-item-link:focus {
+.portfolio-item-link {
+  display: block;
   text-decoration: none;
   color: var(--main-text-color);
+  background-color: var(--white-color);
+  
 }
