@@ -249,7 +249,7 @@ img {
   );
   margin-left: 30px;
 }
-.features-item-title::before {
+.features-item::before {
   display: block;
   margin-bottom: 30px;
   content: '';
@@ -258,16 +258,16 @@ img {
   background-repeat: no-repeat;
   background-position: center;
 }
-.attention .features-item-title::before {
+.attention::before {
   background-image: url(../images/features/antenna.png);
-}
-.punctual .features-item-title::before {
+} 
+.punctual::before {
   background-image: url(../images/features/clock.png);
 }
-.plan .features-item-title::before {
+.plan::before {
   background-image: url(../images/features/diagram.png);
 }
-.tecnology .features-item-title::before {
+.tecnology::before {
   background-image: url(../images/features/astronaut.png);
 }
 .features-item-title,
